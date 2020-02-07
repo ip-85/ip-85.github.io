@@ -2,12 +2,24 @@
 	background: none;
 	margin: 0;
 	padding: 0;
+	transition: all ease 300ms;
+}
+
+a {
+	color: #4AA570;
 }
 
 body {
-	min-height: 100vh;
-	background: #fafafa;
 	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-gap: 40px;
+	grid-auto-flow: row dense;
+
+	min-height: calc(100vh - 200px);
+	padding: 100px;
+
+	background: #fafafa;
+	font-family: 'Roboto', sans-serif;
 }
 
 header{
@@ -41,3 +53,29 @@ header{
 	background-size: cover;
 }
 
+body div {
+	background: #fff;
+	height: 40vh;
+	border-radius: 5px;
+	border: 1px solid #c4c4c4;
+
+	font-size: 36px;
+	padding: 50px;
+	box-sizing: border-box;
+}
+
+.project {
+	background: #4AA570;
+	color: #fff;
+}
+
+@media only screen and (max-width: 1080px) {
+	body {
+		grid-template-columns: 1fr;
+		padding: 100px 25px;
+	}
+
+	body div {
+ 	grid-area: auto !important;
+	}
+}
