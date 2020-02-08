@@ -7,6 +7,11 @@
 
 a {
 	color: #4AA570;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: line-through;
 }
 
 body {
@@ -41,7 +46,7 @@ header{
 	display: block;
 	width: 50px;
 	height: 50px;
-	background: url('./logo.png') ;
+	background: url('./images/logo.png') ;
 	background-size: cover;
 }
 
@@ -49,24 +54,85 @@ header{
 	display: block;
 	width: 50px;
 	height: 50px;
-	background: url('./mail.png') ;
+	background: url('./images/mail.png') ;
 	background-size: cover;
 }
 
-body div {
-	background: #fff;
+body > div {
+	display: flex;
+	justify-content: space-between;
+
 	height: 40vh;
+	box-sizing: border-box;
+
 	border-radius: 5px;
 	border: 1px solid #c4c4c4;
+	background: #fff;
+}
 
-	font-size: 36px;
+body > div {
+	display: flex;
+	justify-content: space-between;
+
+	height: 40vh;
+	box-sizing: border-box;
+
+	border: 1px solid #c4c4c4;
+	background-color: #fafafa;
+	border-radius: 10px;
+}
+
+body > div:hover {
+	border-width: 5px;
+}
+
+.project .content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	height: 100%;
+	width: 50%;
 	padding: 50px;
 	box-sizing: border-box;
 }
 
-.project {
+.project .content h2, .article h2{
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.project .content p, .article p{
+	font-size: 18px;
+	color: #808080;
+}
+
+.project .illustration {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100%;
+	width: 50%;
+	padding: 50px;
+	box-sizing: border-box;
+
+	border-radius: 10px;
 	background: #4AA570;
-	color: #fff;
+}
+
+.project .illustration img {
+	height: 100%;
+}
+
+.article {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	padding: 50px;
+	box-sizing: border-box;
 }
 
 @media only screen and (max-width: 1080px) {
@@ -75,7 +141,23 @@ body div {
 		padding: 100px 25px;
 	}
 
-	body div {
- 	grid-area: auto !important;
+	body > div {
+ 		grid-area: auto !important;
+		 width: calc(100vw - 50px);
+	}
+
+	.project {
+		flex-direction: column-reverse;
+		height: 60vh;
+	}
+
+	.project .content, .project .illustration {
+		padding: 25px;
+		width: 100%;
+	}
+
+	/* !! need fix */
+	.article {
+		display: none;
 	}
 }
