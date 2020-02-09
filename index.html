@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header>
+	<header id="header">
 		<a class='logo' href="https://github.com/ip-85"></a>
 		<a class='mail' href="mailto:ip.p85@ukr.net"></a>
 	</header>
@@ -28,7 +28,7 @@
 			<h2>Article title</h2>
 			<p>by Author</p>
 		</div>
-		<p>short article description</p>
+		<p>Short article description, what is it about, this part also may include <a>links</a> to another articles and projects.</p>
 		<a href="https://medium.com/atricle">medium.com/atricle</a>
 	</div>
 	<div class="article" style="grid-area: 2 / 1 / 3 / 4">
@@ -51,12 +51,12 @@
 	</div>
 	<div class="project" style="grid-area: 3 / 1 / 4 / 6">
 		<div class="content">
-			<h2>Project title</h2>
-			<p>body text</p>
-			<a href="https://github.com/ip-85/">github.com/ip-85/</a>
+			<h2>System Dynamics</h2>
+			<p>Застосунок для проведення опитувань да обробки результатів з можливістю прогнозувати відповіді</p>
+			<a href="https://github.com/ip-85/System-Dynamics">github.com/ip-85/System-Dynamics</a>
 		</div>
-		<div class="illustration" style="background-color: #4AA570">
-			<img src="./images/.svg" alt="logo">
+		<div class="illustration" style="background-color: #9063C7">
+			<img src="./images/dynamics.svg" alt="logo">
 		</div>
 	</div>
 	<div class="article" style="grid-area: 3 / 6 / 4 / 9">
@@ -67,5 +67,15 @@
 		<p>short article description</p>
 		<a href="https://medium.com/atricle">medium.com/atricle</a>
 	</div>
+	<script>
+		let prevScrollpos = window.pageYOffset;
+		window.onscroll = () => {
+			const currentScrollPos = window.pageYOffset;
+			document.getElementsByTagName("header")[0].style.top =
+				currentScrollPos > 100 && currentScrollPos > prevScrollpos ?
+					"-100px" : "0";
+			prevScrollpos = currentScrollPos;
+		}
+	</script>
 </body>
 </html>
