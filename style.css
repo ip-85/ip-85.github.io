@@ -1,5 +1,19 @@
+:root {
+	--background: #ffffff;
+  --container: #fafafa;
+  --text-primary: #111111;
+}
+
+.dark {
+  --background: #111111;
+  --container: #1f1f1f;
+  --text-primary: #ffffff;
+}
+
 * {
+	outline: none;
 	background: none;
+	color: var(--text-primary);
 	margin: 0;
 	padding: 0;
 	transition: all ease 300ms;
@@ -17,14 +31,13 @@ a:hover {
 
 body {
 	display: grid;
-	grid-template-columns: repeat(8, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 40px;
-	grid-auto-flow: row dense;
 
 	min-height: calc(100vh - 200px);
 	padding: 100px;
 
-	background: #fafafa;
+	background: var(--background);
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -51,12 +64,11 @@ header{
 	background-size: cover;
 }
 
-.mail {
+#theme-switcher {
 	display: block;
 	width: 50px;
 	height: 50px;
-	background: url('./images/mail.png') ;
-	background-size: cover;
+	border-radius: 50%;
 }
 
 body > div {
@@ -65,26 +77,26 @@ body > div {
 
 	height: 40vh;
 	box-sizing: border-box;
+
+	background: var(--container);
 
 	border-radius: 5px;
 	border: 1px solid #c4c4c4;
-	background: #fff;
 }
 
 body > div {
 	display: flex;
 	justify-content: space-between;
 
-	height: 40vh;
+	min-height: 40vh;
 	box-sizing: border-box;
 
 	border: 1px solid #c4c4c4;
-	background-color: #fafafa;
 	border-radius: 10px;
 }
 
 body > div:hover {
-	border-width: 5px;
+	box-shadow: 0 0 5px #ccc;
 }
 
 .project .content {
@@ -102,11 +114,12 @@ body > div:hover {
 .project .content h2, .article h2{
 	font-size: 36px;
 	font-weight: bold;
+	color: var(--text-primary)
 }
 
 .project .content p, .article p{
 	font-size: 18px;
-	color: #808080;
+	color: #777;
 }
 
 .project .illustration {
@@ -136,6 +149,13 @@ body > div:hover {
 	box-sizing: border-box;
 }
 
+@media only screen and (max-width: 1580px) {
+	body {
+		grid-template-columns: 1fr;
+		padding: 100px 25px;
+	}
+}
+
 @media only screen and (max-width: 1080px) {
 	body {
 		grid-template-columns: 1fr;
@@ -153,6 +173,7 @@ body > div:hover {
 	}
 
 	.project .content, .project .illustration {
+		height: 50%;
 		padding: 25px;
 		width: 100%;
 	}
